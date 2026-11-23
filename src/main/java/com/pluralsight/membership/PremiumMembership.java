@@ -10,8 +10,8 @@ guestPasses
 public class PremiumMembership extends Membership {
     private int guestPasses;
 
-    public PremiumMembership(String memberName, int months, BigDecimal baseRate, int guestPasses) {
-        super(memberName, months, baseRate);
+    public PremiumMembership(String memberName, int months, int guestPasses) {
+        super(memberName, months);
         this.guestPasses = guestPasses;
     }
 
@@ -25,21 +25,30 @@ public class PremiumMembership extends Membership {
 
     @Override
     public BigDecimal calculateMonthlyPrice() {
-           return BigDecimal.valueOf(48.5);
+           return getBaseRate().add(new BigDecimal(18.5));
 
     }
 
     @Override
     public BigDecimal calculateContractTotal(){
         if (getMonths() >= 12){
-            calculateSignUpFee().multiply(new BigDecimal(0));
+            BigDecimal newSignUp = calculateSignUpFee().ZERO;
+            return calculateMonthlyPrice().multiply(new BigDecimal(getMonths())).add(newSignUp);
+
         }
-        return calculateMonthlyPrice().multiply(new BigDecimal(getMonths())).add(calculateSignUpFee());
+        else {
+            return calculateMonthlyPrice().multiply(new BigDecimal(getMonths())).add(calculateSignUpFee());
+        }
     }
 
     @Override
     public String toString() {
-        return "Premium | " + getMemberName() + " | " + getMonths() + " | guest passes: " + guestPasses +
-                "\nMonthly price: $" + calculateMonthlyPrice() + ", sign-up fee: $" + calculateSignUpFee() + ", contract total: $" + calculateContractTotal();
+        if (getMonths() >= 12) {
+            return "Premium | " + getMemberName() + " | " + getMonths() + " | guest passes: " + guestPasses +
+                    "\nMonthly price: $" + calculateMonthlyPrice() + ", sign-up fee: $" + calculateSignUpFee().ZERO + ", contract total: $" + calculateContractTotal();
+        } else {
+            return "Premium | " + getMemberName() + " | " + getMonths() + " | guest passes: " + guestPasses +
+                    "\nMonthly price: $" + calculateMonthlyPrice() + ", sign-up fee: $" + calculateSignUpFee() + ", contract total: $" + calculateContractTotal();
+        }
     }
 }

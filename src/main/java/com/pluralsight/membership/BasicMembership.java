@@ -11,8 +11,8 @@ offPeakOnly
 public class BasicMembership extends Membership {
     private boolean offPeakOnly;
 
-    public BasicMembership(String memberName, int months, BigDecimal baseRate, boolean offPeakOnly) {
-        super(memberName, months, baseRate);
+    public BasicMembership(String memberName, int months, boolean offPeakOnly) {
+        super(memberName, months);
         this.offPeakOnly = offPeakOnly;
     }
 
@@ -26,11 +26,11 @@ public class BasicMembership extends Membership {
 
     @Override
     public BigDecimal calculateMonthlyPrice() {
-        if (offPeakOnly == true){
-            return new BigDecimal(25.00);
+        if (isOffPeakOnly() == true){
+            return getBaseRate().subtract(new BigDecimal(5));
         }
         else {
-            return new BigDecimal(27.50);
+            return getBaseRate().subtract(new BigDecimal(2.5));
         }
     }
 

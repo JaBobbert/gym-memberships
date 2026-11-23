@@ -13,10 +13,9 @@ public abstract class Membership {
     private int months;
     private BigDecimal baseRate;
 
-    public Membership(String memberName, int months, BigDecimal baseRate) {
+    public Membership(String memberName, int months) {
         this.memberName = memberName;
         this.months = months;
-        this.baseRate = baseRate;
     }
 
     public String getMemberName() {
@@ -36,7 +35,7 @@ public abstract class Membership {
     }
 
     public BigDecimal getBaseRate() {
-        return baseRate;
+        return BigDecimal.valueOf(30);
     }
 
     public void setBaseRate(BigDecimal baseRate) {
