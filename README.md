@@ -1,4 +1,4 @@
-# Project Title
+# GYM Membership
 
 <!-- HOW TO USE THIS TEMPLATE
      Save it as README.md at the root of your project, next to pom.xml. Replace every comment like this one
@@ -8,11 +8,15 @@
 
 <!-- One sentence under the title: what the app is, for whom.
      Example: A console app that keeps a store's inventory in a csv file and lets a clerk search it. -->
+A gym area trying to offer memberships
 
 ## Description of the Project
 
 <!-- Three to five sentences. What the application does, who uses it, what problem it solves.
      Write it for someone who has never seen the workbook: a recruiter, a classmate, you in six months. -->
+Stores 3 seperate styles of memberships with different special features. Such as preimum allows the member to not pay
+sign up fees if more than 12 months basic asks for off-peak. And family allows you to have extra members stored into the 
+system
 
 ## Class Diagram
 
@@ -20,7 +24,7 @@
      images folder and keep the line below. If your project has no class diagram, delete this whole section,
      heading included. -->
 
-![Class Diagram](images/class-diagram.png)
+![Gym-Membership_Diagram.png](src/images/Gym-Membership_Diagram.png)
 
 ## Features
 
@@ -41,8 +45,8 @@
      As a [type of user], I want [some goal] so that [some reason].
      Same text as the cards on your GitHub project board. -->
 
-- As a ..., I want ..., so that ...
-- As a ..., I want ..., so that ...
+- As a user, I want to have a membership pass, so that I can go to the gym
+- As a customer, I want to know how much each cost per month, so that I can keep track on how much I am spending for it.
 
 ## Setup
 
@@ -56,7 +60,7 @@
 1. Clone this repository, or download it as a zip and unzip it.
 2. In IntelliJ: File > Open, pick the project folder (the one that holds `pom.xml`), press Open.
 3. Wait for IntelliJ to finish indexing (progress bar at the bottom).
-4. Open `src/main/java/com/pluralsight/YourMainClassName.java`. <!-- replace YourMainClassName with the class that has main -->
+4. Open `src/main/java/com/pluralsight/Main.java`. <!-- replace YourMainClassName with the class that has main -->
 5. Right-click inside the file and choose Run 'YourMainClassName.main()'.
 
 ### Data and configuration
@@ -91,10 +95,9 @@
      Optional GIF: LICEcap (free, Windows and Mac, <https://www.cockos.com/licecap/>) records a region of the
      screen straight to a .gif. Keep it under 10 seconds and under 10 MB, save it into `images`. -->
 
-![Main menu](images/menu.png)
+![Main(Gym-Membership).png](src/images/Main%28Gym-Membership%29.png)
 
-![One feature in action](images/feature.png)
-
+![Running GYM membership.png](src/images/Running%20GYM%20membership.png)
 ## A piece of code I am proud of
 
 <!-- Paste one short block of your own code (5 to 15 lines) between the three backticks, then write two
@@ -110,7 +113,7 @@
 <!-- What you would add or fix next, one bullet each. Unfinished bonuses belong here. -->
 
 -
--
+-Make it be able to add more different features
 
 ## Resources
 
@@ -123,10 +126,7 @@
 
 <!-- Your name and, if you like, your GitHub profile link. For a team workshop, one line per person with what each one built. -->
 
-- **Your Name**
-
-## Thanks
-
+- **Jacob Davis
 <!-- Optional. The people who helped: the instructor, a classmate who debugged with you, a mentor. -->
 
-- Thank you to ... for ...
+- Thank you
